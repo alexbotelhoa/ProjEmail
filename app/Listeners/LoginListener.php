@@ -40,8 +40,8 @@ class LoginListener
         $tempo = now()->addMinutes(2);
 
         Mail::to($event->user)
-            //->send($user); //Espera o envio para continuar
-            ->queue($user); //Segue o fluxo sem esperar o envio
+            ->send($user); //Espera o envio para continuar
+            //->queue($user); //Segue o fluxo sem esperar o envio
             //->later($tempo, $user); //Espera terminar o TEMPO para continuar
 
         info("depois ..'.. ");
